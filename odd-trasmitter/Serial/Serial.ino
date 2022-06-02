@@ -61,6 +61,7 @@ ISR(TIMER1_COMPA_vect){
         cur_letter = input.charAt(input_i);
       } else {
         digitalWrite(PINO_RTS, LOW);
+        digitalWrite(PINO_TX, LOW);
         Serial.println("[RTS = LOW] feito -> Transmissão encerrada");
       }
 
