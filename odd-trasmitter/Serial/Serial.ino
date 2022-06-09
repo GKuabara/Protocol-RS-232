@@ -17,6 +17,7 @@ unsigned int input_len;
 unsigned int input_i;
 char cur_letter;
 char cur_bit = -1;
+bool parity_bit = false;
 
 #include "Temporizador.h"
 
@@ -41,14 +42,12 @@ ISR(TIMER1_COMPA_vect){
       Serial.println("Enviando start bit: 1");
       digitalWrite(PINO_TX, 1);
       break;
-    
     case 8:
       Serial.print("Parity bit: ");
-      bool parity_bit = bitParidade(cur_letter);
+      parity_bit = bitParidade(cur_letter);
       Serial.println(parity_bit);
       digitalWrite(PINO_TX, parity_bit);
       break;
-
     case 9:
       Serial.println("Enviando end bit: 1");
       digitalWrite(PINO_TX, 1);
@@ -64,7 +63,7 @@ ISR(TIMER1_COMPA_vect){
         digitalWrite(PINO_TX, LOW);
         Serial.println("[RTS = LOW] feito -> Transmissão encerrada");
       }
-
+      break;
     default:
       bool data_bit = bitRead(cur_letter, cur_bit);
       Serial.print("Data bit: ");
