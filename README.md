@@ -20,5 +20,8 @@ The repo constains both transmitter and receiver code in their respective folder
 
 Also, the error detection method used was an **odd** parity bit at the transmition of each char.
 
-Follow a link to Google Drive with the protocol working:
-[Running Arduino Project](https://youtu.be/4Z2g9kw14F8)
+Links to presentation in YouTube:
+
+First presentation was made by two members, before the order to record with all members: [Running Arduino Project](https://youtu.be/4Z2g9kw14F8)
+
+Second presentation with all members: [Running Arduino Project with All Members](https://youtu.be/quISf_Wybb8)
